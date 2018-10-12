@@ -13,4 +13,4 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
-Made with ❤️ in python2.7.
+Made using python2.7.
