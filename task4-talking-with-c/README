@@ -1,0 +1,11 @@
+glfsxmp.c
+=========
+
+glfsxmp.c creates file with some content in the volume.
+
+Compilation Steps For glfsxmp.c
+===============================
+
+1. $./autogen.sh
+2. $./configure
+3. $make glfsxmp
