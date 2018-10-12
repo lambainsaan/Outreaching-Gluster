@@ -1,0 +1,50 @@
+[root@server1 /]# gluster volume status
+
+Volume Name: dist-repl
+Type: Distributed-Replicate
+Volume ID: dd5e0f7c-80e9-423a-99f3-35441669c964
+Status: Started
+Snapshot Count: 0
+Number of Bricks: 2 x 2 = 4
+Transport-type: tcp
+Bricks:
+Brick1: server1:/bricks/brick3/distrep1
+Brick2: server1:/bricks/brick4/distrep2
+Brick3: server2:/bricks/brick3/distrep1
+Brick4: server2:/bricks/brick4/distrep2
+Options Reconfigured:
+transport.address-family: inet
+nfs.disable: on
+performance.client-io-threads: off
+ 
+Volume Name: distributedbrick
+Type: Distribute
+Volume ID: fbc4fe21-5430-41a1-8d48-dff58d41dc67
+Status: Started
+Snapshot Count: 0
+Number of Bricks: 2
+Transport-type: tcp
+Bricks:
+Brick1: server1:/bricks/brick2/distributedbrick
+Brick2: server2:/bricks/brick2/distributedbrick
+Options Reconfigured:
+nfs.disable: on
+transport.address-family: inet
+ 
+Volume Name: gv1
+Type: Replicate
+Volume ID: 6816b45b-6bb6-4692-84f6-3d672da0cd31
+Status: Started
+Snapshot Count: 0
+Number of Bricks: 1 x 2 = 2
+Transport-type: tcp
+Bricks:
+Brick1: server1:/bricks/brick1/gv1
+Brick2: server2:/bricks/brick1/gv1
+Options Reconfigured:
+server.allow-insecure: on
+server.root-squash: off
+nfs.rpc-auth-allow: RhitikKaPC
+transport.address-family: inet
+nfs.disable: on
+performance.client-io-threads: off

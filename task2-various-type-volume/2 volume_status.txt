@@ -1,0 +1,40 @@
+[root@server2 distrep1]# gluster volume status
+
+Status of volume: dist-repl
+Gluster process                             TCP Port  RDMA Port  Online  Pid
+------------------------------------------------------------------------------
+Brick server1:/bricks/brick3/distrep1       49152     0          Y       2898 
+Brick server1:/bricks/brick4/distrep2       49153     0          Y       2920 
+Brick server2:/bricks/brick3/distrep1       49153     0          Y       2478 
+Brick server2:/bricks/brick4/distrep2       49156     0          Y       2500 
+Self-heal Daemon on localhost               N/A       N/A        Y       2943 
+Self-heal Daemon on server2                 N/A       N/A        Y       2523 
+ 
+Task Status of Volume dist-repl
+------------------------------------------------------------------------------
+There are no active volume tasks
+ 
+Status of volume: distributedbrick
+Gluster process                             TCP Port  RDMA Port  Online  Pid
+------------------------------------------------------------------------------
+Brick server1:/bricks/brick2/distributedbri
+ck                                          49154     0          Y       1337 
+Brick server2:/bricks/brick2/distributedbri
+ck                                          49154     0          Y       1344 
+ 
+Task Status of Volume distributedbrick
+------------------------------------------------------------------------------
+There are no active volume tasks
+ 
+Status of volume: gv1
+Gluster process                             TCP Port  RDMA Port  Online  Pid
+------------------------------------------------------------------------------
+Brick server1:/bricks/brick1/gv1            49155     0          Y       1346 
+Brick server2:/bricks/brick1/gv1            49155     0          Y       1353 
+Self-heal Daemon on localhost               N/A       N/A        Y       2943 
+Self-heal Daemon on server2                 N/A       N/A        Y       2523 
+ 
+Task Status of Volume gv1
+------------------------------------------------------------------------------
+There are no active volume tasks
+ 
