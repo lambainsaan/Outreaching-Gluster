@@ -1,7 +1,13 @@
 glfsxmp.c
 =========
 
-glfsxmp.c creates file with some content in the volume.
+glfsxmp.c creates a random file with some random value in the volume.
+
+usage: ./glfsxmp server volume
+
+positional arguments:
+  server      The IP/Hostname of the server.
+  volume      Gluster volume name inside the Host.
 
 Compilation Steps For glfsxmp.c
 ===============================
@@ -9,3 +15,4 @@ Compilation Steps For glfsxmp.c
 1. $./autogen.sh
 2. $./configure
 3. $make glfsxmp
+4. $./glfsxmp ${server-name} ${volume-name}

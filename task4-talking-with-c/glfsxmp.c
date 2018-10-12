@@ -9,13 +9,18 @@ glfs_t *fs = NULL;
 
 int main(int argc, char const *argv[])
 {
+    if (argc != 3) {
+        printf("Usage: ./glfsxmp server volume\n");
+        return -1;
+    }
+    
     int ret = 0;
     unsigned long currentTime = time(NULL);
-    char *serverName = "server1";
-    char *volName = "gv1";
+    char *serverName = argv[1];
+    char *volName = argv[2];
     char filename[25];
     char fileContent[25];
-    
+
     sprintf(filename, "file %lu.txt", currentTime);
     sprintf(fileContent, "File since %lu", currentTime);
     
