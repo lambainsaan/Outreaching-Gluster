@@ -13,15 +13,15 @@ int main(int argc, char const *argv[])
         printf("Usage: ./glfsxmp server volume\n");
         return -1;
     }
-    
+
     int ret = 0;
     unsigned long currentTime = time(NULL);
-    char *serverName = argv[1];
-    char *volName = argv[2];
+    const char *serverName = argv[1];
+    const char *volName = argv[2];
     char filename[25];
     char fileContent[25];
 
-    sprintf(filename, "file %lu.txt", currentTime);
+    sprintf(filename, "file%lu.txt", currentTime);
     sprintf(fileContent, "File since %lu", currentTime);
     
     glfs_fd_t *fd = NULL;
@@ -40,8 +40,11 @@ int main(int argc, char const *argv[])
     }
 
 
-    glfs_creat(fs, filename, O_CREAT, 0644);
-
+    fd = glfs_creat(fs, filename, O_CREAT, 0644);
+    if (fd) {
+        printf("Created file: %s\n", filename);
+    }
+    
     fd = glfs_open(fs, filename, O_RDWR);
 
     glfs_write(fd, fileContent, 21, 0);
