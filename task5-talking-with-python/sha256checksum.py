@@ -36,7 +36,7 @@ def get_volume(server_name, volume_name):
     volume.mount()
     return volume
 
-def findCheckSumEntireDirectory(volume, path):
+def find_check_sum_entire_directory(volume, path):
     """Prints the sha256 checksum of all the files contained in the path.
     
     Arguments:
@@ -44,11 +44,11 @@ def findCheckSumEntireDirectory(volume, path):
         path {string} -- Path to the directory for whose subfiles you want to get the sha256 checksum.
     """
 
-    def findCheckSumEntireDirectoryHelper(path):
+    def find_check_sum_entire_directory_helper(path):
 
         if volume.isdir(path):
             for sub_path in volume.listdir(path):
-                findCheckSumEntireDirectoryHelper(os.path.join(path,sub_path))
+                find_check_sum_entire_directory_helper(os.path.join(path,sub_path))
 
         if volume.isfile(path):
             with volume.fopen(path,"rb") as f:
@@ -56,7 +56,7 @@ def findCheckSumEntireDirectory(volume, path):
                 readable_hash = hashlib.sha256(bytes).hexdigest()
                 print path + " " + readable_hash
 
-    findCheckSumEntireDirectoryHelper(path)
+    find_check_sum_entire_directory_helper(path)
 
 
 if __name__ == "__main__":
@@ -75,4 +75,4 @@ if __name__ == "__main__":
 
     args = vars(parser.parse_args())
     volume = get_volume(args['server'], args['volume'])
-    findCheckSumEntireDirectory(volume, args['dir'])
+    find_check_sum_entire_directory(volume, args['dir'])
